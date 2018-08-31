@@ -9,8 +9,8 @@ public static Fibonacci[] GenFibonaccis(){
     int hi =1;
     Fibonacci one = new Fibonacci();
     one.StoreValue(hi);
-    Fibonacci [] Fserie= new Fibonacci[10];
-    Fserie[0] = one;
+    Fibonacci [] Fseq= new Fibonacci[10];
+    Fseq[0] = one;
     for (int i = 1; i < MAX_INDEX; i++) {
         Fibonacci fb = new Fibonacci();
         hi = lo + hi;
@@ -18,21 +18,23 @@ public static Fibonacci[] GenFibonaccis(){
         if (hi % 2 ==0)
             fb.StoreEven();
         fb.StoreValue(hi);
-        Fserie[i] = fb;
+        Fseq[i] = fb;
     }
-        return Fserie;
+    System.out.println("Fibonacci Sequence Created");
+        return Fseq;
 }
-public static void printFibonaccis(Fibonacci[] Fserie){
+public static void printFibonaccis(Fibonacci[] Fseq){
     for (int i = 0; i < 9; i++) {
         String mark;
         int value;
         boolean even =false;
-            value = Fserie[i].FetchValue();
-            even = Fserie[i].FetchEven();
+            value = Fseq[i].FetchValue();
+            even = Fseq[i].FetchEven();
             if (even == true) mark = "*";
             else mark = "";
             System.out.println(value + ""+ mark);   
         }
+    System.out.println("Fibonacci Sequence Printed");
 }
     public static void main(String[] args) {
         Fibonacci[] Fserie = GenFibonaccis();
