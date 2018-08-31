@@ -14,7 +14,7 @@ public class Exercise12 {
      * @param args the command line arguments
      */
     //deleted void
-    public static void main(String[] args) {
+    public static main(String[] args) {
         System.out.println("Hello World");
         // TODO code application logic here
     }
