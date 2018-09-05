@@ -13,18 +13,19 @@ public static Fibonacci[] GenFibonaccis(){
     Fseq[0] = one;
     for (int i = 1; i < MAX_INDEX; i++) {
         Fibonacci fb = new Fibonacci();
-        hi = lo + hi;
-        lo = hi - lo;
         if (hi % 2 ==0)
             fb.StoreEven();
         fb.StoreValue(hi);
         Fseq[i] = fb;
+        hi = lo + hi;
+        lo = hi - lo;
+       
     }
     System.out.println("Fibonacci Sequence Created");
         return Fseq;
 }
 public static void printFibonaccis(Fibonacci[] Fseq){
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < MAX_INDEX; i++) {
         String mark;
         int value;
         boolean even =false;
