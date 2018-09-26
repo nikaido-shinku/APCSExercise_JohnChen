@@ -76,15 +76,10 @@ public class Initech {
         streetindex = input.indexOf(';', nameindex+1);
         stateindex = input.indexOf(';', streetindex+1);
         bssalindex = input.indexOf(';', stateindex+1);
-        //System.out.println(nameindex);
-        //System.out.println(streetindex);
-        //System.out.println(stateindex);
-        //System.out.println(bssalindex);
         
         name = input.substring(0, nameindex);
         street = input.substring(nameindex+1,streetindex);
         state = input.substring(streetindex+1, stateindex);
-        //System.out.println(input.substring(stateindex+1, bssalindex));
         bssal = Double.parseDouble(input.substring(stateindex+1, bssalindex));
         wkhr = Double.parseDouble(input.substring(bssalindex+1));
         Salary sal = new Salary(bssal);
@@ -273,6 +268,9 @@ public class Initech {
         else if(dtype == "total over salary"){
             printTotalOverSalaryPerPerson();
         }
+        else{
+            System.out.println("desired datatype not found; data type include: address, work hour, state, week salary, base salary, over salary, total over salary");
+        }
     }
     
     public static void search(String dtype, Object data){
@@ -300,6 +298,9 @@ public class Initech {
         }
         else if(dtype == "total over salary"){
             matchTotalOverSalaryPerPerson((double)data);
+        }
+        else{
+            System.out.println("desired datatype not found; data type include: address, work hour, state, week salary, base salary, over salary, total over salary");
         }
         
     }
